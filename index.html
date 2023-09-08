@@ -11,8 +11,61 @@
 
 </head>
 <body>
+	<!-- header -->
+	<header></header>
+	<!-- /header -->
 
+	<!-- main -->
+	<main>
 
+		<div class="card">
+			<div class="card-body">
+	
+				<form class="row g-3">
+					<div class="col-md-6">
+						<label for="inputCity" class="form-label">Nome e Cognome</label>
+						<input type="text" class="form-control" id="inputCity">
+					</div>
+		
+					<div class="col-md-2">
+						<label for="inputZip" class="form-label">Chilometri da percorrere</label>
+						<input type="text" class="form-control" id="inputZip">
+					</div>
+		
+		
+					<div class="col-md-4">
+						<label for="inputState" class="form-label">Fascia di età</label>
+						<select id="inputState" class="form-select">
+							<option selected>Choose...</option>
+							<option>Minorenne</option>
+							<option>Maggiorenne</option>
+							<option>Anziano (over 65)</option>
+						</select>
+					</div>
+		
+					<div class="col-md-2">
+						<button type="submit" class="btn btn-primary">Genera</button>
+					</div>
+					<div class="col-md-2">
+						<button type="reset" class="btn btn-primary">Annulla</button>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<h1 id="output"></h1>
+			</div>
+		</div>
+		
+	</main>
+	<!-- /main -->
+
+	<!-- footer -->
+	<footer></footer>
+	<!-- /footer -->
 	<script src="js/script.js"></script>
 </body>
 </html>
