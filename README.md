@@ -13,3 +13,10 @@ MILESTONE 1: Iniziamo implementando il programma senza alcuna estetica: usando e
 
 MILESTONE 2: Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo. Il recap dei dati e l’output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 Nota: Se non vi sentite particolarmente creativi, questa potrebbe essere un’implementazione da seguire per il secondo milestone.
+
+#### Passaggi:
+1. Salvare in 3 variabili il nome, i chilometri da percorrere e la fascia d'età.
+2. Calcolare il prezzo del biglietto intero.
+3. Appliccare lo sconto se soddisfa le condizioni dell'età.
+4. Generare numero della carrozza e il numero del biglietto.
+5. Visualizzare nella pagina il nome, il tipo di biglietto ( con o senza sconto appliccato), numero della carrozza, il numero del biglietto, il prezzo del biglietto intero e/o il prezzo del biglietto scontato.
