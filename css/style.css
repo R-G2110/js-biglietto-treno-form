@@ -1,0 +1,44 @@
+:root {
+	--bg-primary-color: #B91450;
+	--primary-color: #B91450;
+	}
+	
+	h1,
+	h2 {
+		font-weight: 700;
+		color: white;
+	}
+	
+	.container-custom {
+		width: 80%;
+		margin: 0 auto;
+	}
+	
+	body {
+		background-color: var(--bg-primary-color);
+	}
+	
+	thead {
+		border-top: 1px solid #DEE2E6;
+	}
+	
+	thead tr th:first-child {
+		background-color: #DEE2E6;
+	}
+	
+	.form-label {
+		color: var(--primary-color);
+		font-size: 1.1rem;
+		font-weight: 500;
+	}
+	
+	.form-control,
+	.form-select {
+		border: 1px solid #B91450;
+	}
+	
+	.btn-custom {
+		background: var(--bg-primary-color);
+		color: white;
+	}
+	
