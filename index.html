@@ -9,6 +9,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+	<!-- CCS Custom -->
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 	<!-- header -->
@@ -17,49 +20,92 @@
 
 	<!-- main -->
 	<main>
+		<div class="col-12 text-center pt-5">
+			<h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+		</div>
+		<div class="container-custom">
+			<div class="container-fluid">
+				<div class="card my-5">
+					<div class="card-body">
+						<div class="row my-4">
 
-		<div class="card">
-			<div class="card-body">
-	
-				<form class="row g-3">
-					<div class="col-md-6">
-						<label for="inputCity" class="form-label">Nome e Cognome</label>
-						<input type="text" class="form-control" id="inputCity">
-					</div>
-		
-					<div class="col-md-2">
-						<label for="inputZip" class="form-label">Chilometri da percorrere</label>
-						<input type="text" class="form-control" id="inputZip">
-					</div>
-		
-		
-					<div class="col-md-4">
-						<label for="inputState" class="form-label">Fascia di età</label>
-						<select id="inputState" class="form-select">
-							<option selected>Choose...</option>
-							<option>Minorenne</option>
-							<option>Maggiorenne</option>
-							<option>Anziano (over 65)</option>
-						</select>
-					</div>
-		
-					<div class="col-md-2">
-						<button type="submit" class="btn btn-primary">Genera</button>
-					</div>
-					<div class="col-md-2">
-						<button type="reset" class="btn btn-primary">Annulla</button>
-					</div>
-				</form>
+							<div class="col-4 offset-1">
+								<label for="input-name" class="form-label">Nome e Cognome</label>
+								<input type="text" class="form-control" id="input-name" required />
+							</div>
+					
+							<div class="col-2">
+								<label for="input-km" class="form-label">Chilometri da percorrere</label>
+								<input type="text" class="form-control" id="input-km" required />
+							</div>
 				
-			</div>
-		</div>
+							<div class="col-4">
+								<label for="input-age-range" class="form-label">Fascia di età</label>
+								<select id="input-age-range" class="form-select" required>
+									<option></option>
+									<option value="minorenne">Minorenne</option>
+									<option value="maggiorenne">Maggiorenne</option>
+									<option value="anziano">Anziano (over 65)</option>
+								</select>
+							</div>
 
-		<div class="card">
-			<div class="card-body">
-				<h1 id="output"></h1>
+						</div>
+						<div class="row my-4">
+
+							<div class="col-1 offset-5">
+								<button id="btn-generate" class="btn btn-custom">Genera</button>
+							</div>
+							<div class="col-1" >
+								<button type="reset" class="btn btn-custom">Annulla</button>
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+
+				<div class="col-12 text-center">
+					<h2>IL PREZZO DEL TUO BIGLIETTO</h2>
+				</div>
+
+				<div class="card my-2">
+					<div class="card-body">
+						
+						<table class="table caption-top">
+							<caption><h4 class="text-black">DETTAGLI PASSEGGERO</h4></caption>
+							<thead>
+								<tr>
+									<th scope="col">
+										<h5>NOME PASSEGGERO</h5>
+										<span id="output-name"></span>
+									</th>
+									<th scope="col">
+										<h5>Offerta</h5>
+										<span id="output-ticket-type"></span>
+									</th>
+									<th scope="col">
+										<h5>Carrozza</h5>
+										<span id="output-wagon"></span>
+									</th>
+									<th scope="col">
+										<h5>Codice CP</h5>
+										<span id="output-ticket-number"></span>
+									</th>
+									<th scope="col">
+										<h5>Costo biglietto</h5>
+										<span id="output-ticket-price"></span>
+										<span id="output-total-ticket-price"></span>
+									</th>
+								</tr>
+							</thead>
+							
+						</table>
+						
+					</div>
+				</div>
 			</div>
 		</div>
-		
 	</main>
 	<!-- /main -->
 
