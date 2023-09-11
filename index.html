@@ -27,7 +27,9 @@
 			<div class="container-fluid">
 				<div class="card my-5">
 					<div class="card-body">
-						<div class="row my-4">
+
+						<form>
+							<div class="row my-4">
 
 							<div class="col-4 offset-1">
 								<label for="input-name" class="form-label">Nome e Cognome</label>
@@ -49,18 +51,19 @@
 								</select>
 							</div>
 
-						</div>
+							</div>
+						</form>
 						<div class="row my-4">
 
 							<div class="col-1 offset-5">
 								<button id="btn-generate" class="btn btn-custom">Genera</button>
 							</div>
+
 							<div class="col-1" >
 								<button type="reset" class="btn btn-custom">Annulla</button>
 							</div>
 
 						</div>
-
 
 					</div>
 				</div>
@@ -94,8 +97,8 @@
 									</th>
 									<th scope="col">
 										<h5>Costo biglietto</h5>
-										<span id="output-ticket-price"></span>
 										<span id="output-total-ticket-price"></span>
+										<span id="output-ticket-price"></span>
 									</th>
 								</tr>
 							</thead>

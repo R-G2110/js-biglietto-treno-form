@@ -8,19 +8,20 @@
 
 let ticketPrice;
 let totalTicketPrice;
-let ticketType = 'Biglietto standard';
+let ticketType;
 let ticketGenerated;
 let ticketNumber;
 let wagon;
 const seniorDiscount = (40 / 100);
 const minorDiscount = (20 / 100);
 const generate = document.getElementById('btn-generate'); 
-const  inputName = document.getElementById('input-name');
+const reset = document.getElementById('btn-reset'); 
+const inputName = document.getElementById('input-name');
 const inputKm = document.getElementById('input-km');
 const inputAgeRange = document.getElementById('input-age-range');
 
 
-// Funzione in attesa del click
+// Funzione in attesa del click e genera i dettagli del biglietto
 generate.addEventListener('click', function(){
 	
 	// Salva in 3 variabili il nome, i chilometri da percorrere e la fascia d'età
@@ -31,30 +32,39 @@ generate.addEventListener('click', function(){
 	// Calcola il prezzo del biglietto intero
 	ticketPrice = (km * 0.21);
 	totalTicketPrice = ticketPrice;
+	ticketType = 'Biglietto standard';
 
 	// Applicca lo sconto se soddisfa le condizioni dell'età
 	if (age == 'minorenne') {
 		totalTicketPrice *= (1 - minorDiscount);
-		ticketType = 'Sconto under 18';
+		ticketType = 'Sconto 20% under 18';
 		} else if (age == 'anziano') {
 		totalTicketPrice *= (1 - seniorDiscount);
-		ticketType = 'Sconto over 65';
+		ticketType = 'Sconto 40% over 65';
 	}
 
 	// Genera numero della carrozza e il numero del biglietto
 	wagon = Math.floor((Math.random() * 10) + 1);
 	ticketNumber = Math.floor((Math.random() * 100000) + 1);
-
-	// Salva i dati dentro la variabile 'ticketGenerated'
-	ticketGenerated = `${pName}, ${ticketType}, carrozza: ${wagon}, Ticket Number: ${ticketNumber}, €${ticketPrice.toFixed(2)}, €${totalTicketPrice.toFixed(2)} `
 	
-	// Visualizza nella pagina la variabile 'ticketGenerated'
-	document.getElementById('output-name').innerHTML = pName;
+	// Visualizza nella pagina i corrispettivi variabili
+	document.getElementById('output-name').innerHTML = pName.toUpperCase();
 	document.getElementById('output-ticket-type').innerHTML = ticketType;
 	document.getElementById('output-wagon').innerHTML = wagon;
 	document.getElementById('output-ticket-number').innerHTML = ticketNumber;
-	document.getElementById('output-ticket-price').innerHTML = ticketPrice.toFixed(2);
-	document.getElementById('output-total-ticket-price').innerHTML = totalTicketPrice.toFixed(2);
+	document.getElementById('output-ticket-price').innerHTML = '€' + ticketPrice.toFixed(2);
+	document.getElementById('output-total-ticket-price').innerHTML = '€' + totalTicketPrice.toFixed(2) + '  anziché  ';
+
+	// Visualizza il prezzo scontato se ticketType == 'Sconto over 65' || ticketType == 'Sconto under 18'
+	const tTPVisible = document.querySelector('#output-total-ticket-price');
+	const priceBar = document.querySelector('#output-ticket-price');
+	if (ticketType == 'Sconto 40% over 65' || ticketType == 'Sconto 20% under 18') {
+		tTPVisible.classList.remove('d-none');
+		priceBar.classList.add('text-decoration-line-through');
+	} else {
+		tTPVisible.classList.add('d-none');
+		priceBar.classList.remove('text-decoration-line-through');
+	}
 
 	console.log(pName);
 	console.log(km);
@@ -63,3 +73,13 @@ generate.addEventListener('click', function(){
 	console.log(totalTicketPrice);
 	console.log(ticketType);
 });
+
+// reset.addEventListener('click', function(){
+// 	const pName = null;
+// 	const km = null;
+// 	const age = null;
+
+// 	document.getElementById('input-name').value = pName;
+// 	document.getElementById('input-km').value = km;
+// 	document.getElementById('input-age-range').value = age;
+// })
