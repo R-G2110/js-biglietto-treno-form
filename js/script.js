@@ -19,6 +19,8 @@ const reset = document.getElementById('btn-reset');
 const inputName = document.getElementById('input-name');
 const inputKm = document.getElementById('input-km');
 const inputAgeRange = document.getElementById('input-age-range');
+const generatedTicket = document.querySelector('.generated-ticket');
+ 
 
 
 // Funzione in attesa del click e genera i dettagli del biglietto
@@ -45,7 +47,7 @@ generate.addEventListener('click', function(){
 
 	// Genera numero della carrozza e il numero del biglietto
 	wagon = Math.floor((Math.random() * 10) + 1);
-	ticketNumber = Math.floor((Math.random() * 100000) + 1);
+	ticketNumber = Math.floor((Math.random() * (100000 - 90000) + 90000 ) );
 	
 	// Visualizza nella pagina i corrispettivi variabili
 	document.getElementById('output-name').innerHTML = pName.toUpperCase();
@@ -65,7 +67,7 @@ generate.addEventListener('click', function(){
 		tTPVisible.classList.add('d-none');
 		priceBar.classList.remove('text-decoration-line-through');
 	}
-
+	generatedTicket.classList.remove('d-none');
 	console.log(pName);
 	console.log(km);
 	console.log(age);
@@ -74,12 +76,13 @@ generate.addEventListener('click', function(){
 	console.log(ticketType);
 });
 
-// reset.addEventListener('click', function(){
-// 	const pName = null;
-// 	const km = null;
-// 	const age = null;
+reset.addEventListener('click', function(){
+	const pName = '';
+	const km = '';
+	const age = '';
 
-// 	document.getElementById('input-name').value = pName;
-// 	document.getElementById('input-km').value = km;
-// 	document.getElementById('input-age-range').value = age;
-// })
+	inputName.value = pName;
+	inputKm.value = km;
+	inputAgeRange.value = age;
+	generatedTicket.classList.add('d-none');
+})

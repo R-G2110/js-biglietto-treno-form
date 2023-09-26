@@ -4,10 +4,14 @@
 	--secondary-color: #DEE2E6;
 	}
 	
-	h1,
-	h2 {
+	h1{
 		font-weight: 700;
 		color: white;
+	}
+
+	h2 {
+		font-weight: 700;
+		color: var(--primary-color);
 	}
 	
 	.container-custom {
